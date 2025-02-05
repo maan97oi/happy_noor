@@ -1,0 +1,94 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+}
+
+/* Heart Animation */
+.Heart {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(45deg, #ff5f6d, #ffc371);
+    border-radius: 50% 50% 0 0;
+    transform: rotate(-45deg);
+    margin: 0 auto;
+    animation: beat 1s infinite;
+    box-shadow: 0 0 20px rgba(255, 95, 109, 0.6), 0 0 50px rgba(255, 95, 109, 0.4);
+}
+
+.Heart::before,
+.Heart::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: inherit;
+    border-radius: 50%;
+    top: 0;
+}
+
+.Heart::before {
+    left: -60px;
+}
+
+.Heart::after {
+    left: 60px;
+}
+
+/* Button */
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff5f6d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 95, 109, 0.6);
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffc371;
+}
+
+/* Cake Image */
+.cake {
+    display: none;
+    width: 200px;
+    margin-top: 20px;
+}
+
+/* Message */
+.wish-message {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px #ffc371, 0 0 10px #ff5f6d;
+    text-align: center;
+    max-width: 80%;
+}
+
+@keyframes beat {
+    0%,
+    100% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(-45deg);
+    }
+}
